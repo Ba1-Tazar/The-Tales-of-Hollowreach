@@ -1,14 +1,12 @@
-namespace GameCore.Base {
+using UnityEngine;
 
-    class Character {
+public class Character : MonoBehaviour
+{
+    public float moveSpeed = 5.0f;
 
-        // Fields
-        public int maxHealth;
-        public int maxMana;
-        public int currentHealth;
-        public int currentMana;
-        public int level;
-        public int experience;
-        public int gold;
+    public void Move(Vector3 direction)
+    {
+        transform.Translate(direction * moveSpeed * Time.deltaTime, Space.World);
     }
 }
+
